@@ -16,5 +16,5 @@ object HandshakeCalculator {
     }
 }
 enum class Signal(val code: Int) {
-    WINK(0x1), DOUBLE_BLINK(0x10), CLOSE_YOUR_EYES(0x100), JUMP(0x1000), REVERSE(0x10000)
+    WINK(0b1), DOUBLE_BLINK(0b10), CLOSE_YOUR_EYES(0b100), JUMP(0b1000), REVERSE(0b10000)
 }
