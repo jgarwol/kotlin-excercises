@@ -1,5 +1,7 @@
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import kotlin.test.assertContentEquals
+
 
 class MatrixTest {
     @Test
@@ -39,5 +41,21 @@ class MatrixTest {
         assertContentEquals(matrix.column(2), listOf(7,4,1))
     }
 
+    @Test
+    fun `single saddle point`() =
+        assertSaddlePointsEqual(
+            Matrix(
+                listOf(
+                    listOf(9, 8, 7),
+                    listOf(5, 3, 2),
+                    listOf(6, 6, 7)
+                )
+            ),
+            setOf(
+                MatrixCoordinate(2, 1)
+            )
+        )
+    private fun assertSaddlePointsEqual(matrix: Matrix, coordinates: Set<MatrixCoordinate>) =
+        assertEquals(coordinates, matrix.saddlePoints)
 
 }
